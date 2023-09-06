@@ -19,14 +19,14 @@ function App() {
       setCep(response.data);
       setInput("");
     } catch {
-      alert("Ops erro ao buscar CEP!!");
+      alert("Ops erro ao buscar CEP!! \nTente novamente");
       setInput("");
     }
   }
 
   return (
     <div className="container">
-      <h1 className="title">Buscador CEP</h1>
+      <h1 className="title">Buscador de CEP</h1>
 
       <div className="containerInput">
         <input
@@ -45,10 +45,12 @@ function App() {
         <main className="main">
           <h2>CEP: {cep.cep}</h2>
 
-          <span>{cep.logradouro}</span>
+          <span>Logradouro: {cep.logradouro}</span>
           <span>Complemento: {cep.complemento}</span>
-          <span>{cep.bairro}</span>
-          <span>{cep.localidade}</span>
+          <span>Bairro: {cep.bairro}</span>
+          <span>Localidade: {cep.localidade}</span>
+          <span>UF: {cep.uf}</span>
+          <span>DDD: {cep.ddd}</span>
         </main>
       )}
     </div>
